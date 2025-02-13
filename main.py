@@ -21,6 +21,16 @@ success_string = str(success_rate)
 
 print("The rate of mission success is: " + success_string + "%.")
 
+twentieth_century_years = mission_years
+twentieth_century_names = mission_names
+
+index = 0
+
 for twentieth_century in mission_years:
-    if twentieth_century < 2000:
-        
+    if twentieth_century > 2000:
+        del twentieth_century_years[index]
+        del twentieth_century_names[index]
+    index += 1
+
+relation_list = [(twentieth_century_years[twentieth_century], twentieth_century_names[twentieth_century]) for twentieth_century in range(len(twentieth_century_years))]
+print(relation_list)
